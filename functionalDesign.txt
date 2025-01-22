@@ -1,0 +1,9 @@
+1. Maak een 4x4 grid 
+    Maak een grid van div's. 
+    Koppel het grid aan een array met een for loop.
+
+2. Je kan 1 woord raden op een hardcoded grid.
+    de volgorde maakt nog niet uit.
+
+3. woorden worden uit een array vertaald naar grid.
+    worden naar aangrenzende letters op het grid gezet.

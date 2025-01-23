@@ -17,4 +17,9 @@ body{
     font-weight: bold;
     font-size: 1.9em;
     justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.box:hover{
+    background-color: gray;
 }

@@ -3,7 +3,11 @@
     Koppel het grid aan een array met een for loop.
 
 2. Je kan 1 woord raden op een hardcoded grid.
-    de volgorde maakt nog niet uit.
+    per klik worden letters aan een string toegevoegd
+    zet letters op het grid waaronder de letters van een woord
+    maak in het letterGrid states door letters in het grid toe te voegen voor de boxes of ze geclicked zijn of niet
+    maak een array met woorden
+    check per klik of de string overeenkomt met een woord uit de array
 
 3. woorden worden uit een array vertaald naar grid.
     worden naar aangrenzende letters op het grid gezet.

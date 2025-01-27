@@ -23,13 +23,45 @@ body{
     cursor: pointer;
     transition: background-color 0.3s;
 }
+.clickedBox{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(29, 197, 85);
+    margin: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.9em;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 .box:hover{
     background-color: gray;
 }
-#foundList{
+.clickedBox:hover{
+    background-color: rgb(29, 139, 61);
+}
+#wordList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: capitalize;
     text-align: center;
     font-weight: bold;
     font-size: 1.2em;
+}
+.word{
+    color: black;
+    background-color: rgb(29, 197, 85);
+    border-radius: 32px;
+    width: fit-content;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 4px;
 }

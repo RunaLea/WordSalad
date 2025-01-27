@@ -6,6 +6,8 @@ let letterGrid =[
         ["a0","f0","b0","z0"]
     ];
 lettersToGrid();
+let wordList = ["hippo", "giraffe", "rhino", "zebra", "lion"]
+let wordsFound = [];
 let clickString = "";
 
 function lettersToGrid(){
@@ -15,7 +17,7 @@ function lettersToGrid(){
         let y = x % 4;
         document.getElementById("box"+(x+1)).innerHTML = letterGrid[z][y][0];
         // console.log("box"+(x+1),letterGrid[z][y])
-        if(y==3){z+=1;}
+        if(y==3){z+=1;};
     }
 }
 function clickToString(boxNum){
@@ -63,7 +65,24 @@ function clickToString(boxNum){
             clickString = clickString.substring(0, clickString.length -1);
         }
     }
-
     console.log(letterGrid);
     console.log(clickString);
+    wordCheck();
+}
+function wordCheck(){
+    // If the word is in the wordList the word is added to the wordsFound and the board is reset
+    if(wordList.includes(clickString)){
+        console.log(`The word ${clickString} is found!`);
+        wordsFound.push(clickString);
+        document.getElementById("foundList").innerHTML = wordsFound.join(" ");
+        clickString="";
+        let z = 0;
+        for(x=0;x<16;x++){
+            let y = x % 4;
+            letterGrid[z][y] = `${letterGrid[z][y][0]}0`;
+            if(y==3){z+=1;};
+        }
+        console.log(wordsFound);
+        console.log(letterGrid);
+    }
 }

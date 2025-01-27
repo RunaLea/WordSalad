@@ -1,9 +1,12 @@
 body{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 #grid{
     display: grid;
+    justify-self: center;
+    align-self: center;
     grid-template: repeat(4,64px) / repeat(4,64px);
 }
 .box{
@@ -22,4 +25,11 @@ body{
 }
 .box:hover{
     background-color: gray;
+}
+#foundList{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
 }

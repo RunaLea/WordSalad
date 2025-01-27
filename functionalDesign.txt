@@ -9,5 +9,9 @@
     maak een array met woorden
     check per klik of de string overeenkomt met een woord uit de array
 
-3. woorden worden uit een array vertaald naar grid.
+3. Klik mechanic verbeteren
+    Onthou welk vakje als laatst is geklikt. Check of het vakje al eens geklikt is,
+    en als het niet het laatst geklikte vakje is moet de string leeg.
+
+4. woorden worden uit een array vertaald naar grid.
     worden naar aangrenzende letters op het grid gezet.

@@ -17,6 +17,12 @@
 4. Je mag alleen aangrenzende vakjes klikken
     Functie maken met een if statement waarin hij met een for loop kijkt of het geklikte vakje overeenkomt 
     met 1 van de aangrenzende vakjes van het laatst geklikte vakje.
+    Maak een array met toegestane vakjes. Check alle vakjes +1 en -1 van het vakje (zowel x als y as).
+    Als er een -1 in de coordinaten zit gaat hij niet in de toegestane vakjes. 
+    Het geklikte vakje mag ook niet in de array.
 
-5. woorden worden uit een array vertaald naar grid.
+5. Je kan niet 2 keer hetzelfde woord raden
+    Check in de wordCheck functie of het woord in wordsFound zit. Zo ja? Dan word hij niet toegevoegd.
+
+6. woorden worden uit een array vertaald naar grid.
     worden naar aangrenzende letters op het grid gezet.

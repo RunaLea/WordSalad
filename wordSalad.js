@@ -104,9 +104,9 @@ function clickLetter(boxNum, clickedLetter, rowNum){
     lastY = rowNum;
     lastClickables = clickables;
     clickables = nearCheck();
-    console.log(letterGrid);
     console.log(clickString);
     console.log(`Clickable letters: ${clickables}`);
+    console.log(letterGrid);
 }
 function unclickLetter(boxNum, clickedLetter, rowNum){
     // Changes the box to unclicked
@@ -115,9 +115,9 @@ function unclickLetter(boxNum, clickedLetter, rowNum){
     document.getElementById("box" + (boxNum+1)).classList.remove("clickedBox");
     document.getElementById("box" + (boxNum+1)).classList.add("box");
     clickables = lastClickables;
-    console.log(letterGrid);
     console.log(clickString);
     console.log(`Clickable letters: ${clickables}`)
+    console.log(letterGrid);
 }
 function resetClicks(){
     // Resets all clicks
@@ -134,10 +134,12 @@ function resetClicks(){
 }
 function completeWord(){
     // Shows the newly completed word in a new element
+    // Removes the completed word from the wordList
     newWord = document.createElement("div");
     document.getElementById("wordList").appendChild(newWord);
     newWord.className = "word";
     newWord.innerText = wordsFound[(wordsFound.length-1)];
+    wordList.splice(wordList.indexOf(clickString),1);
 }
 function nearCheck(){
     // Puts all clickable boxes around the last clicked number in an array

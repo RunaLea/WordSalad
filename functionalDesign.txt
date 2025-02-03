@@ -22,7 +22,7 @@
     Het geklikte vakje mag ook niet in de array.
 
 5. Je kan niet 2 keer hetzelfde woord raden
-    Check in de wordCheck functie of het woord in wordsFound zit. Zo ja? Dan word hij niet toegevoegd.
+    Het geraden woord word uit de wordList gehaald.
 
 6. woorden worden uit een array vertaald naar grid.
     worden naar aangrenzende letters op het grid gezet.

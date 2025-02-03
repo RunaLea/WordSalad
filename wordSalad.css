@@ -65,3 +65,8 @@ body{
     padding-bottom: 2px;
     margin: 4px;
 }
+@keyframes word {
+    0% {background-color: rgb(29, 197, 85);}
+    50% {background-color: rgb(110, 240, 153);}
+    100%{background-color: rgb(29, 197, 85);}
+}

@@ -37,6 +37,19 @@ body{
     cursor: pointer;
     transition: background-color 0.3s;
 }
+.inactiveBox{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    margin: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.9em;
+    justify-content: center;
+}
 .box:hover{
     background-color: gray;
 }
@@ -64,9 +77,4 @@ body{
     padding-top: 2px;
     padding-bottom: 2px;
     margin: 4px;
-}
-@keyframes word {
-    0% {background-color: rgb(29, 197, 85);}
-    50% {background-color: rgb(110, 240, 153);}
-    100%{background-color: rgb(29, 197, 85);}
 }

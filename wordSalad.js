@@ -120,16 +120,24 @@ function unclickLetter(boxNum, clickedLetter, rowNum){
     console.log(letterGrid);
 }
 function resetClicks(){
-    // Resets all clicks
+    // Resets all clicks that can be unclicked
     clickString="";
     clickables = ["0-0","0-1","0-2","0-3","1-0","1-1","1-2","1-3","2-0","2-1","2-2","2-3","3-0","3-1","3-2","3-3"];
     let z = 0;
     for(x=0;x<16;x++){
         let y = x % 4;
-        letterGrid[z][y] = `${letterGrid[z][y][0]}0`;
-        document.getElementById("box" + (x+1)).classList.remove("clickedBox");
-        document.getElementById("box" + (x+1)).classList.add("box");
-        if(y==3){z+=1;};
+        if(letterGrid[z][y][1]!=2){
+            letterGrid[z][y] = `${letterGrid[z][y][0]}0`;
+            document.getElementById("box" + (x+1)).classList.remove("clickedBox");
+            document.getElementById("box" + (x+1)).classList.add("box");
+        }
+        // Changes all boxes that are unclickable to be invisible
+        else{
+            document.getElementById("box" + (x+1)).classList.remove("clickedBox");
+            document.getElementById("box" + (x+1)).classList.add("inactiveBox");
+            document.getElementById("box" + (x+1)).onclick="";
+        }
+        if(y==3){z+=1;}
     }
 }
 function completeWord(){
@@ -140,6 +148,7 @@ function completeWord(){
     newWord.className = "word";
     newWord.innerText = wordsFound[(wordsFound.length-1)];
     wordList.splice(wordList.indexOf(clickString),1);
+    letterDel();
 }
 function nearCheck(){
     // Puts all clickable boxes around the last clicked number in an array
@@ -153,4 +162,27 @@ function nearCheck(){
         if(y>=0&&x>=0&&y<4&&x<4){clickables.push(`${x}-${y}`)};
     }
     return clickables;
+}
+function letterDel(){
+    // Checks if the wordList has any words with the same letters as the completed word and adds them to doubles
+    let doubles = [];
+    for(i=0;i<clickString.length;i++){
+        for(j=0;j<wordList.length;j++){
+            if(wordList[j].includes(clickString[i])){doubles.push(wordList[j], clickString[i])};
+        }
+    }
+    console.log("doubles: " + doubles);
+    // Makes all letters that are not doubles uncklickable
+    for(i=0;i<clickString.length;i++){
+        if(doubles.includes(clickString[i])==false){
+            for(j=0;j<4;j++){
+                if(letterGrid[j].includes(`${clickString[i]}1`)){
+                    for(k=0;k<4;k++){
+                        if(letterGrid[j][k]==`${clickString[i]}1`){letterGrid[j][k]=`${clickString[i]}2`;}
+                    }
+                }
+            }
+        }
+    }
+    console.log(letterGrid);
 }

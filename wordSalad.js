@@ -1,8 +1,11 @@
 // Array of letters on the grid
+// 0 = unclicked
+// 1 = clicked
+// 2 = removed
 let letterGrid =[
-        ["o0","n0","l0","o0"],
+            ["o0","n0","l0","o0"],
         ["h0","i0","p0","p0"],
-        ["g0","r0","f0","e0"],
+            ["g0","r0","f0","e0"],
         ["a0","f0","b0","z0"]
     ];
 let wordList = ["hippo", "giraffe", "rhino", "zebra", "lion"]

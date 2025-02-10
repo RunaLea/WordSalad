@@ -24,5 +24,12 @@
 5. Je kan niet 2 keer hetzelfde woord raden
     Het geraden woord word uit de wordList gehaald.
 
-6. woorden worden uit een array vertaald naar grid.
+6. Letters die niet meer gebruikt worden verdwijnen uit het grid
+    Maak een inactive state voor de letters.
+    Maak een functie genaamd letterDel. 
+    Ga met een for loop over de letters in het geraden woord.
+    Check per letter of deze letter voorkomt in andere woorden in het grid.
+    Else zet de geclickte letter op inactive.
+    
+7. woorden worden uit een array vertaald naar grid.
     worden naar aangrenzende letters op het grid gezet.

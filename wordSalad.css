@@ -7,13 +7,15 @@ body{
     display: grid;
     justify-self: center;
     align-self: center;
-    grid-template: repeat(4,64px) / repeat(4,64px);
+    grid-template: repeat(4,56px) / repeat(4,64px);
 }
 .box{
     display: flex;
     flex-direction: column;
     background-color: lightgrey;
+    clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%);
     margin: 2px;
+    height: 70px;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     text-align: center;
@@ -22,6 +24,11 @@ body{
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+.evenRow{
+    margin-right: 30px;
+    margin-left: -30px;
+    width: 60px;
 }
 .clickedBox{
     display: flex;

@@ -3,9 +3,9 @@
 // 1 = clicked
 // 2 = removed
 let letterGrid =[
-            ["o0","n0","l0","o0"],
+        ["o0","n0","l0","o0"],
         ["h0","i0","p0","p0"],
-            ["g0","r0","f0","e0"],
+        ["g0","r0","f0","e0"],
         ["a0","f0","b0","z0"]
     ];
 let wordList = ["hippo", "giraffe", "rhino", "zebra", "lion"]
@@ -171,7 +171,7 @@ function letterDel(){
     let doubles = [];
     for(i=0;i<clickString.length;i++){
         for(j=0;j<wordList.length;j++){
-            if(wordList[j].includes(clickString[i])){doubles.push(wordList[j], clickString[i])};
+            if(wordList[j].includes(clickString[i])){doubles.push(clickString[i])};
         }
     }
     console.log("doubles: " + doubles);
@@ -182,6 +182,19 @@ function letterDel(){
                 if(letterGrid[j].includes(`${clickString[i]}1`)){
                     for(k=0;k<4;k++){
                         if(letterGrid[j][k]==`${clickString[i]}1`){letterGrid[j][k]=`${clickString[i]}2`;}
+                    }
+                }
+            }
+        }
+        // If there is a double that is not clicked, the double that is clicked becomes unclickable
+        for(j=0;j<doubles.length;j++){
+            for(k=0;k<4;k++){
+                if(letterGrid[k].includes(`${doubles[j]}0`)){
+                    let m = 0
+                    for(l=0;l<16;l++){
+                        let n = l % 4;
+                        if(letterGrid[m][l]==`${doubles[j]}1`){letterGrid[m][l]=`${doubles[j]}2`;}
+                        if(n==3){m+=1;}
                     }
                 }
             }
